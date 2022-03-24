@@ -1,15 +1,15 @@
 {
-  "name": "@dtdot/diff-tracer",
+  "name": "diff-tracer",
   "version": "0.0.0",
   "description": "Trace your changes back to discover which test files to run",
   "main": "dist/trace.js",
   "type": "module",
   "bin": {
-    "diff-tracer": "dist/trace.js"
+    "diff-tracer": "bin/trace.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/trace.js",
+    "start": "tsc && node bin/trace.js",
     "build": "tsc"
   },
   "author": "Simon Pratt <19920260+simonpratt@users.noreply.github.com>",
