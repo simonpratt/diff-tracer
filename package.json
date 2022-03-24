@@ -1,0 +1,24 @@
+{
+  "name": "test-tracer",
+  "version": "1.0.0",
+  "description": "Trace your changes back to discover which test files to run",
+  "main": "index.ts",
+  "type": "module",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/trace.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/node": "^17.0.23",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "glob": "^7.2.0"
+  }
+}
