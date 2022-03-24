@@ -5,11 +5,11 @@
   "main": "dist/trace.js",
   "type": "module",
   "bin": {
-    "diff-tracer": "bin/trace.js"
+    "diff-tracer": "bin/trace"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node bin/trace.js",
+    "start": "tsc && node dist/trace.js",
     "build": "tsc"
   },
   "author": "Simon Pratt <19920260+simonpratt@users.noreply.github.com>",

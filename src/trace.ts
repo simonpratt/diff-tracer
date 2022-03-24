@@ -1,12 +1,30 @@
 import { exec } from 'child_process';
 import glob from 'glob';
 import dependencyTree from 'dependency-tree';
-import yargs from 'yargs/yargs';
-import { hideBin } from 'yargs/helpers';
+import yargs, { Argv } from "yargs";
+import { hideBin } from 'yargs/helpers'
 
-const argv = yargs(hideBin(process.argv)).options({
-  spec: { type: 'string', default: '*.test.ts' },
-}).argv
+const argv = yargs(hideBin(process.argv))
+  .usage('Run targeting a branch to discover what test files need to be run to ensure adequate coverage of current changes\n\nUsage: $0 [options]')
+  .options({
+    branch: {
+      alias: 'b',
+      description: "git branch to compare the current changes against",
+      requiresArg: false,
+      required: false,
+      type: 'string'
+    },
+    spec: {
+      alias: 's',
+      description: "subset of tests that are elegible for running",
+      requiresArg: false,
+      required: false,
+      type: 'string'
+    }
+  })
+  .default('branch', 'master')
+  .default('spec', '**/*.test.ts')
+  .argv
 
 const findTestFiles = (pattern: string): string[] => {
   const files = glob.sync(pattern);
@@ -44,15 +62,11 @@ const findFilesWithChangedDependencies = (testFiles: string[], changedFiles: str
 }
 
 const main = async () => {
-  const spec = (await argv).spec;
+  const branch = (await argv).branch;
+  const spec = (await argv).spec
 
-  if (!spec) {
-    console.log('Spec must be provided. Run diff-tracker --help for more info.');
-    process.exit();
-  }
-
-  const files = findTestFiles('example/**/*.test.ts');
-  const diff = await findChangedFiles('master');
+  const files = findTestFiles(spec!);
+  const diff = await findChangedFiles(branch);
   const changed = findFilesWithChangedDependencies(files, diff);
 
   process.stdout.write(changed.join('\n'));

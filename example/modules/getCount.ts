@@ -1,3 +1,3 @@
-const getCount = () => 1;
+const getCount = () => 2;
 
 export default getCount;

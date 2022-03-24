@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": false,
     "noFallthroughCasesInSwitch": true,
-    "outDir": "bin"
+    "outDir": "dist"
   },
   "include": [
     "src"
