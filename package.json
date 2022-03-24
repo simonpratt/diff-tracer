@@ -1,25 +1,28 @@
 {
-  "name": "test-tracer",
-  "version": "1.0.0",
+  "name": "@dtdot/diff-tracer",
+  "version": "0.0.0",
   "description": "Trace your changes back to discover which test files to run",
-  "main": "index.ts",
+  "main": "dist/trace.js",
   "type": "module",
-  "directories": {
-    "example": "example"
+  "bin": {
+    "diff-tracer": "dist/trace.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/trace.js"
+    "start": "tsc && node dist/trace.js",
+    "build": "tsc"
   },
-  "author": "",
+  "author": "Simon Pratt <19920260+simonpratt@users.noreply.github.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/glob": "^7.2.0",
     "@types/node": "^17.0.23",
+    "@types/yargs": "^17.0.10",
     "typescript": "^4.4.4"
   },
   "dependencies": {
     "dependency-tree": "^8.1.2",
-    "glob": "^7.2.0"
+    "glob": "^7.2.0",
+    "yargs": "^17.4.0"
   }
 }
