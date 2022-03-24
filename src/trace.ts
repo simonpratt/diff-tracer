@@ -39,15 +39,10 @@ const findFilesWithChangedDependencies = (testFiles: string[], changedFiles: str
 
 const main = async () => {
   const files = findTestFiles('example/**/*.test.ts');
-  console.log(files);
-
   const diff = await findChangedFiles('master');
-  console.log(diff);
-
   const changed = findFilesWithChangedDependencies(files, diff);
-  console.log(changed);
 
-  console.log(process.cwd())
+  process.stdout.write(changed.join(','));
 }
 
 main();
