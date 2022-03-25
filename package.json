@@ -2,11 +2,15 @@
   "name": "diff-tracer",
   "version": "0.0.0",
   "description": "Trace your changes back to discover which test files to run",
-  "main": "dist/trace.js",
+  "main": "bin/trace",
   "type": "module",
   "bin": {
-    "diff-tracer": "bin/trace"
+    "diff-tracer": "bin/trace.js"
   },
+  "files": [
+    "bin/*",
+    "dist/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/trace.js",

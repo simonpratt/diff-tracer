@@ -61,7 +61,7 @@ const findFilesWithChangedDependencies = (testFiles: string[], changedFiles: str
   return changed;
 }
 
-const main = async () => {
+const run = async () => {
   const branch = (await argv).branch;
   const spec = (await argv).spec
 
@@ -73,4 +73,4 @@ const main = async () => {
   process.stdout.write('\n');
 }
 
-main();
+export default run;
