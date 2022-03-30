@@ -26,7 +26,7 @@ The following command line arguments can be used to customise behaviour
 ## Development
 
 To get the development environment setup
-- Remove any existing install of `diff-tracer`
+- Remove any existing install of diff-tracer
   `npm r -g diff-tracer`
 - Install dependencies
   `npm ci`
