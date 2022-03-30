@@ -17,7 +17,8 @@ jobs:
       - persist_to_workspace:
           root: /tmp/diff-tracer
           paths:
-            - build
+            - dist
+            - bin
             - package.json
 
   publish-beta:
