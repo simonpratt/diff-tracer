@@ -1,6 +1,6 @@
 {
   "name": "diff-tracer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Trace your changes back to discover which test files to run",
   "main": "bin/trace",
   "type": "module",
